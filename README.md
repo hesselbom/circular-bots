@@ -1,19 +1,24 @@
 # Circular Bots
 AI Bot Battle. Write a bot and kill the other bots.
+
 ## Requirements
 * node >= v6.4
 * npm >= v3.10
+
 ## Install
 ```shell
 npm install
 ```
+
 ## Run
 ```shell
 node app.js
 ```
 The server is now running on localhost:1337
+
 ## Play
 Play by visiting http://localhost:1337/. There you can skip login and then select bots to fight. Or register and login to store your bots remote.
+
 ## Documentation
 Create bots in `/bots` folder. Look at `/bots/SimpleBot.js` for all available options and data.
 

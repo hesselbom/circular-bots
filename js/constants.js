@@ -1,0 +1,17 @@
+module.exports = {
+  DO_NOTHING: 1,
+  MOVE: 2,
+  SHOOT: 3,
+  MOVE_BULLET: 4,
+  KILL_BULLET: 5,
+  HIT_BOT: 6,
+  KILL_BOT: 7,
+  GAME_OVER: 8,
+  MINE: 9,
+  KILL_MINE: 10,
+
+  BULLET_SPEED: 2,
+  RELOAD_FRAMES: 70,
+  MAX_HEALTH: 5,
+  MAX_TICKS: 5 * 60 * 60
+}

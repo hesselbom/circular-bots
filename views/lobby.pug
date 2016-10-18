@@ -1,0 +1,58 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    h1 Circular Bots
+
+    .content-box.-wide
+      .bot-list
+        h2 Local bots
+        for b in bots
+          .bot
+            a(href=addBot(b.file)) #{b.name}
+            a.upload(href='/upload?key=' + b.file) &uarr;
+
+        h2 My stored bots
+        if loggedin
+          if storedBots.length > 0
+            for b in storedBots
+              .bot
+                a(href=addBot('remote:' + b.key)) #{b.name} 
+                  span.subtle (#{b.key})
+                a.remove(href='/delete?key=' + b.key) -
+          else
+            p.info No stored bots yet
+        else
+          p.info Not logged in
+
+        h2 Add remote bot
+        form
+          for b in querybots
+            input(type='hidden' name='bot' value=b)
+          input(type='text' name='remote')
+
+        h2 My stored fights
+        if loggedin
+          if storedFights.length > 0
+            for f in storedFights
+              .bot
+                a(href='/fight?key=' + f.key) #{formatDate(f.date)} 
+                  span.subtle (#{f.key})
+          else
+            p.info No stored fights yet
+        else
+          p.info Not logged in
+
+      .bot-list.-submit
+        h2 Roster
+        for b in roster
+          .bot #{b.name}
+            if b.remote
+              span.info (remote)
+            a.remove(href=removeBot(b.id)) -
+
+        if querybots.length > 0
+          .submit: a(href='/fight' + params(querybots)) Fight!
+
+  .footer-links
+    a(href='/logout') Logout

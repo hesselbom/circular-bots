@@ -1,0 +1,11 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    h1 Circular Bots
+
+    .content-box
+      p Are you sure you want to delete your bot '#{key}' from the &#9729;?
+      form(action='/delete' method='post').credentials-form
+        input(type='hidden' name='key' value=key)
+        button(type='submit') Yes

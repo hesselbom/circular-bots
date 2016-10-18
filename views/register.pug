@@ -1,0 +1,12 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    h1 Register
+
+    .content-box
+      form(action='/register' method='post').credentials-form
+        input(type='text' name='username' placeholder='Username')
+        input(type='password' name='password' placeholder='Password')
+        input(type='text' name='signupkey' placeholder='Signup Key')
+        button(type='submit') Register

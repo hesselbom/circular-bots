@@ -1,0 +1,9 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    h1 Circular Bots
+
+    .content-box
+      p Fight stored at 
+        a(href='/fight?key=' + key) #{key}

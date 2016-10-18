@@ -1,0 +1,21 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    .circular-arena
+      .counter
+
+  #overlay.overlay-block
+    .centered-block
+      .content-box
+        p The fight is ready!
+
+        .credentials-form
+          button(onClick='play()') Play fight!
+
+        form(action='/storefight' method='post').credentials-form
+          input(type='hidden' name='fight' value=fight)
+          button(type='submit') Store fight
+
+  script(src='/app')
+  script#fight(type='text/x-circular-fight') !{fight}

@@ -1,0 +1,16 @@
+extends layouts/base.pug
+
+block body
+  .centered-block
+    h1 Circular Bots
+
+    .content-box
+      p The fight is ready!
+
+      form(action='/fight' method='post').credentials-form
+        input(type='hidden' name='fight' value=fight)
+        button(type='submit') Play fight!
+
+      form(action='/storefight' method='post').credentials-form
+        input(type='hidden' name='fight' value=fight)
+        button(type='submit') Store fight

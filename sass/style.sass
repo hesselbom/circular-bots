@@ -1,0 +1,51 @@
+$browser-context: 16
+
+@function em($pixels, $context: $browser-context)
+  @return #{$pixels/$context}em
+
+@function rem($pixels, $context: $browser-context)
+  @return #{$pixels/$context}rem
+
+@import 'normalize'
+
++normalize
+
+*, *:before, *:after
+  box-sizing: border-box
+
+html
+  -webkit-font-smoothing: antialiased
+
+html, body
+  height: 100%
+
+body
+  background: black
+  color: white
+  font-family: 'Roboto Mono', monospace
+  text-align: center
+
+  &:before
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+
+h1, h2, h3, h4, h5
+  font-size: 1rem
+  font-weight: 700
+  margin-top: 0
+  margin-bottom: 1rem
+
+p
+  margin-top: 0
+  margin-bottom: .5rem
+
+a
+  color: inherit
+  transition: opacity .2s ease
+
+  &:hover
+    opacity: .5
+
+@import 'components/**/*'
